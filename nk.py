@@ -57,7 +57,7 @@ while True:
   passwd_list = input(f"Enter Your Password list OR a password: ")
   username = input(f"Enter Your Username list OR a Username: ")
   host_ip = input(f"Enter Host_IP: ")
-  threads = input(f"Enter The Amount of Threads")
+  threads = input(f"Enter The Amount of Threads: ")
   os.system(f'"python3 cerbrutus.py {host_ip} SSH -U "{username}" -P {passwd_list} -t {threads}"')
  elif which == "4":
   inf = input(f"Enter Your Interface: ")
