@@ -47,7 +47,7 @@ while True:
   os.system(auto_airodump)
  elif which == "2":
   interface = input(f"Enter Your Interface: ")
-  os.system("cls")
+  os.system("clear")
   ent_ch = input(f"Enter Your Targets Network Channel: ")
   os.system(f"sudo iwconfig {interface} channel {ent_ch}")
   ap = input(f"Enter The Access Point: ")
