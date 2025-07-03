@@ -29,9 +29,9 @@ while True:
  banner()
  print(f"\n{LIGHT_GREEN}[1] Enter Monitor Mode & Airodump-ng - Tool airmon-ng")
  print(f"{LIGHT_CYAN}[2] Start Deauth - Tool Aireplay-ng")
- print(f"{YELLOW}[3] {LIGHT_RED}SSH Brute Force,{YELLOW} - Tool Cerbrutus ")
+ print(f"{YELLOW}[3] {LIGHT_RED}SSH Brute Force,{YELLOW} - Tool Hydra ")
  print(f"{LIGHT_WHITE}[4] Man In The Middle - Tool Bettercap")
- print(f"{LIGHT_PURPLE}[5] {LIGHT_BLUE}Crack {LIGHT_WHITE}Wpa2{LIGHT_BLUE} Passwords ")
+ print(f"{LIGHT_PURPLE}[5] {LIGHT_BLUE}Crack {LIGHT_WHITE}Wpa2{LIGHT_BLUE} Passwords - aircrack-ng ")
  print(f"\n{LIGHT_PURPLE}Remember {LIGHT_WHITE}Ctrl+C{LIGHT_PURPLE} Will Bring You Back, {LIGHT_GREEN}ONLY WHEN IN TOOL SCREEN")
  def hydra():
   print("\n[1] ssh password brute force")
