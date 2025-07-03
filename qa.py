@@ -58,7 +58,7 @@ while True:
   username = input(f"Enter Your Username list OR a Username: ")
   host_ip = input(f"Enter Host_IP: ")
   threads = input(f"Enter The Amount of Threads: ")
-  os.system(f'"python3 cerbrutus.py {host_ip} SSH -U "{username}" -P {passwd_list} -t {threads}"')
+  os.system(f'python3 cerbrutus.py {host_ip} SSH -U "{username}" -P "{passwd_list}" -t {threads}')
  elif which == "4":
   inf = input(f"Enter Your Interface: ")
   os.system(f"sudo bettercap -iface {inf} -eval 'net.sniff on; https.proxy on; net.probe on'")
