@@ -26,7 +26,7 @@ while True:
 {PURPLE}\_, /\_,_/_/\__/_/\_\  \_,_/\__/\__/\__/___/___/
  /_/                                {LIGHT_WHITE} By @yyLevi\n""")
  
- os.system("cls")
+ os.system("clear")
  banner()
  print(f"{LIGHT_GREEN}[1] Enter Monitor Mode & Airodump-ng - Tool airmon-ng")
  print(f"{LIGHT_CYAN}[2] Start Deauth - Tool Aireplay-ng")
@@ -66,4 +66,3 @@ while True:
   aircrack = input("Enter Your Password List: ")
   pcap = input("Enter Your .Pcap File: ")
   os.system(f"aircrack-ng -w {aircrack} {pcap}")
-
