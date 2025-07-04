@@ -41,7 +41,7 @@ while True:
    print("[2] ssh username brute force")
    print("[3] ssh username & password brute force\n")
    while True:
-    choice = input("Answer: ")
+    choice = input("\033[0mAnswer: ")
     if choice == "1":
      passwd_list = input(f"Enter Your Targets Password OR Type 'show' to locate the wordlist: ")
      if passwd_list == "show":
