@@ -102,8 +102,8 @@ while True:
    locate = input(f"Locate Your Wordlist, Enter .txt Name: {LIGHT_GREEN} ")
    os.system(f"locate {locate}")
   else:
-   pcap = input("Enter Your .Pcap File, OR Type 'find' To Check Your Dir For The pcap File: ")
-   if pcap == "find":
+   pcap = input(f"Enter Your .Pcap File, OR Type 'find' To Check Your Dir For The pcap File:{LIGHT_PURPLE} ")
+   if pcap == f"find":
     os.system("ls")
     pcap = input(f"Enter Your .Pcap File: {LIGHT_PURPLE} ")
    os.system(f"aircrack-ng -w {aircrack} {pcap}")
