@@ -105,5 +105,5 @@ while True:
    pcap = input(f"Enter Your .Pcap File, OR Type 'find' To Check Your Dir For The pcap File:{LIGHT_PURPLE} ")
    if pcap == f"find":
     os.system("ls")
-    pcap = input(f"Enter Your .Pcap File: {LIGHT_PURPLE} ")
+    pcap = input(f"\033[0mEnter Your .Pcap File: {LIGHT_PURPLE} ")
    os.system(f"aircrack-ng -w {aircrack} {pcap}")
