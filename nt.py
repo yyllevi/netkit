@@ -83,6 +83,11 @@ while True:
   inf = input(f"Enter Your Interface: ")
   os.system(f"sudo bettercap -iface {inf} -eval 'net.sniff on; https.proxy on; net.probe on'")
  elif which == "5":
-  aircrack = input("Enter Your Password List: ")
+  aircrack = input("Enter Your Password List, OR Type 'show' to locate wordlist: ")
+ if aircrack == "show":
+  locate = input("Locate Your Wordlist, Enter .txt Name: ")
+  os.system(f"locate {locate}")
+ else:
   pcap = input("Enter Your .Pcap File: ")
   os.system(f"aircrack-ng -w {aircrack} {pcap}")
+
