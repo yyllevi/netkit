@@ -20,11 +20,13 @@ LIGHT_WHITE ="\033[1;37m"
 while True:
  def banner():
   print(fr"""{LIGHT_PURPLE}
-            _     __                            
- ___ ___ __(_)___/ /__  ___ ____________ ___ ___
-/ _ `/ // / / __/  '_/ / _ `/ __/ __/ -_|_-<(_-<
-{PURPLE}\_, /\_,_/_/\__/_/\_\  \_,_/\__/\__/\__/___/___/
- /_/                                {LIGHT_WHITE} By @yyLevi""")
+     __     _  _____           _ _ 
+  /\ \ \___| |/__   \_ __ ___ | | |
+ /  \/ / _ \ __|/ /\/ '__/ _ \| | |
+{PURPLE}/ /\  /  __/ |_/ /  | | | (_) | | |
+\_\ \/ \___|\__\/   |_|  \___/|_|_|
+                                   
+{LIGHT_WHITE} By @yyLevi""")
  
  banner()
  print(f"\n{LIGHT_GREEN}[1] Enter Monitor Mode & Airodump-ng - airmon-ng")
@@ -32,22 +34,7 @@ while True:
  print(f"{YELLOW}[3] {LIGHT_RED}SSH Brute Force,{YELLOW} - Hydra ")
  print(f"{LIGHT_WHITE}[4] Man In The Middle - Bettercap")
  print(f"{LIGHT_PURPLE}[5] {LIGHT_BLUE}Crack {LIGHT_WHITE}Wpa2{LIGHT_BLUE} Passwords - aircrack-ng ")
- print(f"{LIGHT_GRAY}[6] Port Scan - Nmap")
  print(f"\n{LIGHT_PURPLE}Remember {LIGHT_WHITE}Ctrl+C{LIGHT_PURPLE} Will Bring You Back, {LIGHT_GREEN}ONLY WHEN IN TOOL SCREEN")
- def nmap():
-  print("\n[1] Enter nmap command yourself: ")
-  print("[2] very fast nmap scan  ")
-  print("[3] nmap aggressive scan\n")
-  nmap_choice = input("Answer: ")
-  if nmap_choice == "1":
-   nmapc = input("Enter Your Command, Don't add nmap in: ")
-   os.system(f"nmap {nmapc}")
-  elif nmap_choice == "2":
-   host = input("Enter Domain OR Ip: ")
-   os.system(f"nmap -vv -n {host}")
-  elif nmap_choice == "3":
-   host = input("Enter Domain OR Ip: ")
-   os.system(f"nmap -vv -n -sT {host}")
  def hydra():
   print("\n[1] ssh password brute force")
   print("[2] ssh username brute force")
@@ -99,5 +86,3 @@ while True:
   aircrack = input("Enter Your Password List: ")
   pcap = input("Enter Your .Pcap File: ")
   os.system(f"aircrack-ng -w {aircrack} {pcap}")
- elif which == "6":
-  nmap()
