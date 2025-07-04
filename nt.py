@@ -81,7 +81,7 @@ while True:
   kill_process = "sudo airmon-ng check kill"
   os.system(kill_process)
 
-  auto_airodump = f"sudo airodump-ng {interface} {YELLOW}"
+  auto_airodump = f"sudo airodump-ng {interface}"
   os.system(auto_airodump)
  elif which == "2":
   interface = input(f"Enter Your Interface: ")
