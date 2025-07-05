@@ -8,4 +8,4 @@
 ## 🔎 get the job done faster
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### The Reason Why I Used Normal Hacking Tools Not New Ones, Is Because I Couldn't Be Fucked Adding All Of Them To Path
+### 📃 The Reason Why I Used Normal Hacking Tools Not New Ones, Is Because I Couldn't Be Fucked Adding All Of Them To Path
